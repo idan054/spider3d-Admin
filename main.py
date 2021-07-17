@@ -5,7 +5,7 @@ from datetime import datetime
 # current date and time
 now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 file_path = "index.json"
-token = "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"
+token = "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"
 g = Github(token)
 repo = g.get_repo("idan054/Spider3DFlux")
 
