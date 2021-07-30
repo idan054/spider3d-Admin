@@ -1,8 +1,6 @@
 # flask_formDesign.py
-
 from bs4 import BeautifulSoup, SoupStrainer
 from flask import Flask, render_template, request
-
 from configByResp import config_by_resp
 from main import push
 from flask import Flask
