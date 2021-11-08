@@ -22,12 +22,15 @@
   <br>
 
   <h2>ניהול אפליקציית Spider3D</h2>
+  <h5>*יש לשים לב היטב לאופן השימוש למניעת תקלות* </h5>
   <br>
   <h6>- מוצר/ קטגוריה: יש להקליד product / category כדי לבחור לאן תוביל התמונה.</h6>
-  <h6>- מס׳ סליידר: יש להקליד 1, 2 או 3 כדי לבחור את מיקום הסליידר.</h6>
+  <h6>- מס׳ קבוצה: יש לסמן ב 1 (ברירת מחדל) את כל הסליידרים באותה הקבוצה. </h6>
+  <h6>- סדר הרשימה הוא סדר הצוגה כך שהסליידר הראשון מוצג ראשון...</h6>
   <h6>- מס׳ מוצר/ קטגוריה: יש ולהעתיק את ה id שלו מהקישור בלעמוד העריכה של המוצר המתאים (לדוגמא tag_ID=2352).</h6>
   <h6>- קישור לתמונה: קישור ישיר לתמונה, יחס מומלץ 18:9.</h6>
-  <h6 style="font-size:15px; color:DimGrey"> הערה: שורת הקטגוריות באפליקציה נמצאות בין סליידר 1 ל 2 כך שניתן לקבוע אם הם יופיעו מעל או מתחת.</h6>
+  <h6 style="font-size:15px; color:DimGrey"> הערה: כדי להרים את שורת הקטגוריות לראש, יש לבחור במס׳ קבוצה 2.</h6>
+  <h6 style="font-size:15px; color:DimGrey"><a href="https://imgur.com/ldOfYS4.png">דוגמא למילוי הפאנל ניהול.</a> </h6>
   <br>
     <form action= "/" method="post">
             <div  class="solid_round10">
@@ -47,7 +50,7 @@
 <!--            <td><input type="radio" name="pic_type" value="קטגוריה"> קטגוריה<br>-->
 <!--                <input type="radio" name="pic_type" value="מוצר"> מוצר</td>-->
             <td><input type="text" class="form-control" style="border-radius: 8px" name="pic_type" placeholder="מוצר/קטגוריה"></td>
-            <td><input type="text" class="form-control" style="border-radius: 8px" name="slider_num" placeholder="מס' סליידר"></td>
+            <td><input type="text" class="form-control" style="border-radius: 8px" name="slider_num" placeholder="מס' קבוצה"></td>
             <td><input type="text" class="form-control" style="border-radius: 8px" name="pic_num" placeholder="מס' מוצר/ קטגוריה"></td>
             <td><input type="text" class="form-control" style="border-radius: 8px" name="pic_link" placeholder="קישור לתמונה"></td>
           <td><button type="button" class="btn btn-danger remove-form-field"  data-target="tr">הסר</button></td>
@@ -59,10 +62,13 @@
       </div>
     </form>
     <br>
-      <p style="font-size:11px" dir="ltr">This Cpanel run on Heroku server (at <a href="https://spider3d-admin.herokuapp.com">https://spider3d-admin.herokuapp.com</a>), who adapted to flask deploys. <br/>
+      <p style="font-size:11px" dir="ltr">
+          To update the whole Config file push main branch on <a href="https://github.com/idan054/spider3DFlux">'Spider3DFlux'</a>  Repo.<br/>
+          To update The sliders just click the "עדכן" Button. (This will use the live config at <a href="https://config-fluxstore-mauve.vercel.app">https://config-fluxstore-mauve.vercel.app</a> to update the sliders)
+
+          <br/>
+          <br/>This Cpanel run on Heroku server (at <a href="https://spider3d-admin.herokuapp.com">https://spider3d-admin.herokuapp.com</a>), who adapted to flask deploys. <br/>
           Push <a href="https://github.com/idan054/spider3d-Admin">'spider3d-admin'</a> repo will auto update this Cpanel on the server, Logs available on idanbit80@gmail.com user in Heroku site under Activity <br/>
-          <br>
-          The Update button on this Cpanel push to the main branch on <a href="https://github.com/idan054/spider3DFlux">'Spider3DFlux'</a> repo (You can also push manually) → this push will auto update the config file, who based on vercel.com at <a href="https://config-fluxstore-mauve.vercel.app">https://config-fluxstore-mauve.vercel.app</a>, → the config update will instant update the Spider3d App.</p>
 </div>
 <!-- partial -->
 <!--  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="script.js"></script>-->

@@ -24,7 +24,7 @@ def home():
     if request.method == "POST":
             form_resp = request.form.to_dict(flat=False)
             print(form_resp)
-            final_config = config_by_resp(form_resp=form_resp, live_config=False)
+            final_config = config_by_resp(form_resp=form_resp, live_config=True)
             name = request.form["pic_link"]
             # name = final_config
             resp = push(file_path, f"Latest update on {now} (by .py)",
