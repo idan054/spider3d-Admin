@@ -1,9 +1,47 @@
-<html Lang="en">
+<!--<html Lang="en">-->
+<!--<head>-->
+<!--    <meta charset= "UTF-8">-->
+<!--    <title>Welcome</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>name {{name}}</h1>-->
+<!--    <h1>resp {{resp}}</h1>-->
+<!--<body/>-->
+
+<!DOCTYPE html>
+<html lang="en" >
 <head>
-    <meta charset= "UTF-8">
-    <title>Welcome</title>
+  <meta charset="UTF-8">
+  <title>תמונת מצב</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+
+<style>
+    div.solid_round10 {
+      border: 1px solid gainsboro;
+      border-radius: 8px;
+    }
+</style>
+
 </head>
 <body>
-    <h1>name {{name}}</h1>
-    <h1>resp {{resp}}</h1>
-<body/>
+<!-- partial:index.partial.html -->
+<div class="container" dir="rtl">
+
+  <br>
+  <br>
+  <br>
+
+  <h2>ניהול אפליקציית Spider3D</h2>
+  <h5>סטטוס מצב:</h5>
+<!--  <h6>- מוצר/ קטגוריה: יש להקליד product / category כדי לבחור לאן תוביל התמונה.</h6>-->
+
+  <h6 style="font-size:15px; color:DimGrey">{{name}}</h6>
+  <h6 style="font-size:15px; color:DimGrey">{{resp}}</h6>
+<!--  <h6 style="font-size:15px; color:DimGrey"><a href="https://imgur.com/ldOfYS4.png">דוגמא למילוי הפאנל ניהול.</a> </h6>-->
+  <br>
+
+</body>
+</html>
+
+
+
