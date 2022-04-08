@@ -19,17 +19,15 @@
 
   <br>
   <br>
-  <br>
 
   <h2>ניהול אפליקציית Spider3D</h2>
-  <h5>*יש לשים לב היטב לאופן השימוש למניעת תקלות* </h5>
+<!--  <h5>*יש לשים לב היטב לאופן השימוש למניעת תקלות* </h5>-->
   <br>
-  <h6>- מוצר/ קטגוריה: יש להקליד product / category כדי לבחור לאן תוביל התמונה.</h6>
-  <h6>- מס׳ קבוצה: יש לסמן ב 1 (ברירת מחדל) את כל הסליידרים באותה הקבוצה. </h6>
-  <h6>- סדר הרשימה הוא סדר הצוגה כך שהסליידר הראשון מוצג ראשון...</h6>
   <h6>- מס׳ מוצר/ קטגוריה: יש ולהעתיק את ה id שלו מהקישור בלעמוד העריכה של המוצר המתאים (לדוגמא tag_ID=2352).</h6>
   <h6>- קישור לתמונה: קישור ישיר לתמונה, יחס מומלץ 18:9 (938×624), התמונה נחתכת מעט מלמטה ולמעלה.</h6>
-  <h6 style="font-size:15px; color:DimGrey"> הערה: כדי להרים את שורת הקטגוריות לראש, יש לבחור במס׳ קבוצה 2.</h6>
+  <br>
+  <h6 style="font-size:15px; color:DimGrey"> הערה: לא חובה להוסיף תמונות לשני הסטים</h6>
+  <h6 style="font-size:15px; color:DimGrey"> הערה 2: סדר השורות הוא סדר הצוגה התמונות</h6>
   <h6 style="font-size:15px; color:DimGrey"><a href="https://i.imgur.com/ldOfYS4.png">דוגמא למילוי הפאנל ניהול.</a> </h6>
   <br>
     <form action= "/" method="post">
@@ -47,10 +45,12 @@
       <table id="base-package-table-filed" hidden>
         <tbody>
         <tr>
+            <td><input type="text" class="form-control" style="border-radius: 8px" name="pic_type" placeholder="מוצר/קטגוריה"></td>
 <!--            <td><input type="radio" name="pic_type" value="קטגוריה"> קטגוריה<br>-->
 <!--                <input type="radio" name="pic_type" value="מוצר"> מוצר</td>-->
-            <td><input type="text" class="form-control" style="border-radius: 8px" name="pic_type" placeholder="מוצר/קטגוריה"></td>
-            <td><input type="text" class="form-control" style="border-radius: 8px" name="slider_num" placeholder="מס' קבוצה"></td>
+            <td><input type="text" class="form-control" style="border-radius: 8px" name="slider_num" value="1" placeholder="מס' סט"></td>
+<!--                    <td><input checked type="radio" name="slider_num" value="1"> סט עליון<br>-->
+<!--                    <input type="radio" name="slider_num" value="2"> סט תחתון</td>-->
             <td><input type="text" class="form-control" style="border-radius: 8px" name="pic_num" placeholder="מס' מוצר/ קטגוריה"></td>
             <td><input type="text" class="form-control" style="border-radius: 8px" name="pic_link" placeholder="קישור לתמונה"></td>
           <td><button type="button" class="btn btn-danger remove-form-field"  data-target="tr">הסר</button></td>
@@ -61,6 +61,13 @@
             <!--            <input type="submit" value="Submit">-->
       </div>
     </form>
+    <br>
+    <p dir="ltr">
+        <b style="font-size:15px; color:DimGrey">{{itemA}}</b><br>
+        <b style="font-size:15px; color:DimGrey">{{itemB}}</b><br>
+        <b style="font-size:15px; color:DimGrey">{{itemC}}</b><br>
+        <b style="font-size:15px; color:DimGrey">{{itemD}}</b><br>
+    </p>
     <br>
       <p style="font-size:11px" dir="ltr">
           To update the whole Config file push main branch on <a href="https://github.com/idan054/spider3DFlux">'Spider3DFlux'</a>  Repo.<br/>
@@ -75,7 +82,7 @@
 <!--  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="script.js"></script>-->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   <script>
-      $('.add-fields').each(function(index, el) {
+  $('.add-fields').each(function(index, el) {
   var warp = $(this);
   var target = $(this).data('af_target') || '.content';
   var index = $(target).children('div, tr').length;

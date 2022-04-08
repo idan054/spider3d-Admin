@@ -152,7 +152,7 @@ repo = g.get_repo("idan054/Spider3DFlux")
 #   "Datetime": "15:24:04 - Mon 12 Jul"
 # }"""  # Modify/Create file
 
-def push(path, message, content, branch):
+def pushToGithub(path, message, content, branch):
     author = InputGitAuthor(
         "idan054",
         "idanbit80@gmail.com"
@@ -163,6 +163,7 @@ def push(path, message, content, branch):
     # if update:  # If file already exists, update it
     try:  # If file already exists, update it
         contents = repo.get_contents(path, ref=branch)  # Retrieve old file to get its SHA and path
+        # print(f'contents.decoded_content {contents.decoded_content}')
         repo.update_file(contents.path, message, content, contents.sha, branch=branch, author=author)  # Add, commit and push branch
         return "File has been updated!"
     except:  # If file doesn't exist, create it

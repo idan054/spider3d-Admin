@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from main import push
+from main import pushToGithub
 from flask import Flask
 from github import Github, InputGitAuthor
 from datetime import datetime
@@ -19,7 +19,7 @@ def home():
     if request.method == "POST":
         name = request.form["first name"]
         # name = request.form
-        resp = push(file_path, f"Latest update on {now} (by .py)", name, "main")
+        resp = pushToGithub(file_path, f"Latest update on {now} (by .py)", name, "main")
         return render_template("resp.html", name=name, resp=resp) # age.html
 
     return render_template("base.html")

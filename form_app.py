@@ -1,8 +1,8 @@
 # flask_formDesign.py
-from bs4 import BeautifulSoup, SoupStrainer
+from bs4 import BeautifulSoup
 from flask import Flask, render_template, request
 from configByResp import config_by_resp
-from main import push
+from main import pushToGithub
 from flask import Flask
 from github import Github, InputGitAuthor
 from datetime import datetime
@@ -27,12 +27,66 @@ def home():
             final_config = config_by_resp(form_resp=form_resp, live_config=True)
             name = request.form["pic_link"]
             # name = final_config
-            resp = push(file_path, f"Latest update on {now} (by .py)",
-                        str(final_config),
-                        "main")
+            resp = pushToGithub(file_path, f"Latest update on {now} (by .py)",
+                                str(final_config), "main")
+
             return render_template("resp.html", name=name, resp=resp) # age.html
 
-    return render_template("form_design/index.html")
+
+    import urllib.request, json
+    url = urllib.request.urlopen("https://config-fluxstore-idan054.vercel.app/")
+    full_config = json.loads(url.read().decode())
+
+    sliderData = []
+    full_config['bannerImage_UpdatedAt'] = f'{now}'
+    print(full_config["bannerImage_UpdatedAt"])
+
+    i = 0
+    for item in full_config["HorizonLayout"][1]['items']:
+        dictSample = {'category': '5707', 'image': 'https://www.spider3d.co.il/wp-content/uploads/2022/04/Anycubic-129.jpg', 'padding': 15.0}
+        dictKeys = list(item)
+        dictValues = list(item.values())
+        # print(dictKeys[i])
+        # print(dictValues[i])
+        # print(f'{dictKeys[i]}: {dictValues[i]}')
+        # sliderData.append(f'{dictKeys[i]}: {dictValues[i]}')
+
+        # iKey = 0
+        # for key in dictKeys:
+        #     if key == 'padding': pass
+        #     else:
+        #         print(f'{dictKeys[iKey]}: {dictValues[iKey]}')
+        #         sliderData.append(f'{dictKeys[iKey]}: {dictValues[iKey]}\n')
+        #     iKey += 1
+
+        # print(f'\n{item}'.replace(", 'padding': 15.0}", "").replace('{', ""))
+        sliderData.append(f'\n{item}'.replace(", 'padding': 15.0}", "").replace('{', ""))
+        print()
+        i += 1
+    print(f'{sliderData}'.replace(',', ''))
+
+
+        # dictSample.
+        # print(item)
+        # print(item.value)
+
+    itemA = ''
+    itemB = ''
+    itemC = ''
+    itemD = ''
+
+    for item in sliderData:
+        if itemA == '': itemA = item
+        elif itemB == '': itemB = item
+        elif itemC == '': itemC = item
+        elif itemD == '': itemD = item
+
+    return render_template("form_design/index.html",
+                           itemA=f'{itemA}',
+                           itemB=f'{itemB}',
+                           itemC=f'{itemC}',
+                           itemD=f'{itemD}',
+                           )
 
 
 if __name__ == '__main__':

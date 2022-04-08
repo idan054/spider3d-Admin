@@ -1,3 +1,4 @@
+from datetime import datetime
 
 def config_by_resp(form_resp, live_config):
     items_dict = {}
@@ -41,6 +42,8 @@ def config_by_resp(form_resp, live_config):
 
     ## place final "items" of full config
     forIndex = 0
+    now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    full_config['bannerImage_UpdatedAt'] = f'{now}'
     for item in full_config["HorizonLayout"]:
         # print(item)
         if item["layout"] == "bannerImage":
