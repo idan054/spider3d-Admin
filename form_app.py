@@ -76,10 +76,10 @@ def home():
     itemD = ''
 
     for item in sliderData:
-        if itemA == '': itemA = item
-        elif itemB == '': itemB = item
-        elif itemC == '': itemC = item
-        elif itemD == '': itemD = item
+        if itemA == '': itemA = item.replace("'",'')
+        elif itemB == '': itemB = item.replace("'",'')
+        elif itemC == '': itemC = item.replace("'",'')
+        elif itemD == '': itemD = item.replace("'",'')
 
     return render_template("form_design/index.html",
                            itemA=f'{itemA}',
